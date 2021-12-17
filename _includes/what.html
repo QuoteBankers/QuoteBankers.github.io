@@ -27,6 +27,67 @@
           });
         </script>
         <div id="top-topics"></div>
+      <!-- Block of text to the right -->
+      <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
+        <h2 class="text-black">Topics in the clusters</h2>
+        <p class="mb-4">
+          Using a topic classification method, we were able to determine the most probable topic 
+          for each quote. Overall, the three most talked about subjects are sport, art, and economy & finance.
+          As the QuoteBank dataset was formed by collecting quotes from newspapers, this repartition of topics is nothing but expected.
+          Indeed, sports and culture specialised newspapers are far more knowed by the general public than scientific publications journal for example.
+          However, pure political subjects are not as predominant as one could have thought. To be able to analyse further how each group of people choose their subject to be quotes, 
+          let us dig a level bellow and take interest in the clustering results.
+        </p>
+        <h5 class= "text-black"> Politicians that don't talk about politics ? </h4>
+        <p class = "mb-4">
+          As seen in the overall analysis, and contrary to what could have been common sense, 
+          politics is <b>not</b> the most talked subject of the politicians cluster ! 
+          One specific reason may be explaining this oddity in our results. We can assume that 
+          the model **add quotes**  has classified in the "Politics" topic only quotes
+          that are centered on purely political subjects such as elections or nomination of member of governments.
+          Therefore all the subjects about the impacts of politics on the economy or in healthcare for example will 
+          be classified in their respective category. Hence, it is not suprising to notice that,
+          appart for the <sub><i>elephant in room</i></sub> art topic, the three main subjects are economy, finance,
+          and of course politics...
+
+          <br/>
+          Now let's talk about the aforementioned <i>elephant in the room</i>, the <b>Art</b> topic.
+          Who could have expected that politicians are mainly interested in art ? Well..., they may be not. 
+          Indeed, let's not forget that the cluster A is also populated by writers, singers, and actors, which are all deeply art-oriented 
+          occupations.
+        </p>
+        <h5 class = "text-black">Artists and their things...</h5>
+        <p class = "mb-4">
+          Now that we have had a better understanding of the first cluster, let's analyse the second one.
+          Like cluster A, cluster B is also populated by actors writers, singers and politicans, but this cluster has a younger age overall,
+          and also is much less quoted. 
+          Cluster B also countains much more <i>artists</i> than cluster A. All of these reasons may explain why, in this group, 
+          more than <b>50%</b> of the quotes are classified as art. All the other topics results are tight together, around 7% for health, science and politics, and 15% for sport economy and finance.
+        </p>
+        <h5 class = "text-black">Everything for the sport ! </h5>
+        <p class = "mb-4">
+          Cluster C is made of young, fiery sportmen and sportwomen. And as we can see on the topic 
+          classification results for this cluster, the big bulk of the quotes ( just above <b>50%</b>) 
+          are about... Sports ! 
+          In term of shear numbers, that makes it up to <b>21 millions</b> quotes about sport, 
+          which is much higher than for the two other cluster.
+          However, a non-negligible portion of the quotes were classified in <i>Art</i> and <i>Politics</i>. That may be explained
+          that even if they are sportperson, everyone is prone to talk about those subjects.
+          Finally, we see that the <i>Economy & Finance</i> topic is one of the less quoted subject for cluster C. 
+          This is surely because it is very unlikely that a sportsperson will be asked a question about those two subjects during an interview
+          or even talk about this subject in a relevant manner on the fly. The same thing could be said for health, but the fact that sport in highly related to health in general 
+          may explain the small difference in percentage.
+        </p>
+      </div>
+      <!-- Plots to the left -->
+      <div class="col-lg-7" data-aos="fade-right">
+            <script>
+              $(function () {
+                $("#top-topics").load("assets\\images\\top-topics.html");
+              });
+            </script>
+          <div id="top-topics"></div>
+>>>>>>> Stashed changes
 
       </div>
     </div>
