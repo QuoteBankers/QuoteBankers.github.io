@@ -13,7 +13,7 @@
           <h3>Datasets used</h3>
             <ul class="mb-5">
                 <li>
-                    <a href="https://zenodo.org/record/4277311#.Ybd6B73MKMo">Quotebank dataset</a>
+                    <a id="quotebank" href="https://zenodo.org/record/4277311#.Ybd6B73MKMo">Quotebank dataset</a>
                 </li>
                 The Quotebank dataset contains 178 million speaker-attributed attributed quotations collected
                 from 162 million English news articles published between 2008 and 2020. The dataset is divided
@@ -21,22 +21,27 @@
                 as only phase E has correctly represented non-ASCII characters. For more details regarding the 
                 phases see the datasets <a href="https://github.com/epfl-dlab/Quotebank/blob/main/phases.md">GitHub repository</a>.
                 <li>
-                    <a href="https://drive.google.com/drive/folders/1VAFHacZFh0oxSxilgNByb1nlNsqznUf0">Wikidata speakers</a>
+                    <a id="wikidata" href="https://drive.google.com/drive/folders/1VAFHacZFh0oxSxilgNByb1nlNsqznUf0">Wikidata speakers</a>
                 </li>
                 This file contains the metadata about 9 million speakers in the Quotebank dataset. The attributes provided (and the
                 amount of speakers they are available for) are: 
                 date of birth (<b>?</b>), gender (98%), occupation (96%) nationality (84%), religion (11%), ethnic group (7%), etc. 
+                <li>
+                    <a id="wordnet" href="https://wordnet.princeton.edu/">Wordnet</a>
+                </li>
+                Wordnet is a lexical database of the English language organized in a tree-manner. We used it to calculate the semantic 
+                distances between all the occupations in the Wikidata-dataset to a set of top 8 occupations, in order to avoid the curse 
+                of dimensionality when clustering with K-means.
             </ul> 
           <h3>Methods</h3>
             <ul class="mb-5">
                 <li>
-                    <a href="https://github.com/nicodv/kmodes">K-prototypes clustering algorithm</a>
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html">K-means clustering algorithm</a>
                 </li>
-                The speakers dataset that we want to cluster to find personas in the data has both numerical (age and number of quotations) 
-                and categorical attributes (gender, nationality, and occupation). Clustering with K-means is only possible after 
-                one-hot encoding all categorical variables, which gives rise to the curse of dimensionality since there are ~100 different
-                occupations. Therefore, the K-prototypes is used as it handles clustering over numerical and categorical variables, and has 
-                shown to perform better than K-means with one-hot encoding <sup><a href="#ref:1">1</a></sup>. For implementation details, see
+                The speakers dataset that we want to cluster to find personas in the data has only numerical features. Thus, we chose to cluster
+                the data using the K-means clustering algorithm implemented in sklearn. To avoid the curse of dimensionality when clustering, 
+                we reduced the genders to only [male, female, others] before one-hot encoding, and also, we reduced the roughly 2400 different 
+                occupations to the semantic differences to a set of pre-defined 8 occupations. For implementation details, see
                 the Jupyter notebook <a href="https://github.com/epfl-ada/ada-2021-project-quotebankers/blob/main/clustering.ipynb">clustering.ipynb</a>
                 in the GitHub repository.
                 <li>
