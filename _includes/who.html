@@ -17,8 +17,8 @@
           voice heard is a privilege that few have. Sometimes you can have
           the feeling that only the loudest are listened to. We have analyzed
           the <a href="#quotebank">Quotebank</a> dataset from 2015 to 2020, and from it we
-          extracted information about the speakers from <a href="#wikidata">Wikidata</a>, 
-          let us see who are the most quoted speakers:
+          extracted information about the speakers from <a href="#wikidata">Wikidata</a>. First, 
+          let us see who are the most quoted speakers !
         </p>
 
         <figure data-aos="fade-up">
@@ -101,6 +101,7 @@
     <div class="row mb-5 site-section">
       <!-- Block of text to the left -->
       <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
+      
         <h2 class="text-black">2. Male-dominated quotations</h2>
         <p class="mb-4">
           When we break down the speakers by gender, we can see that males stand
@@ -165,57 +166,57 @@
 
     <!-- 4) Age & occupation -->
     <div class="row mb-5 site-section">
-      <!-- Block of text to the left -->
-      <div class="col-lg-12 pl-lg-5 ml-auto mt-md-5">
+      <div class="text-center mb-5">
         <h2 class="text-black">4. Age and occupation group</h2>
-
-        <div class="col-lg-12" data-aos="fade-up">
-          <html>
-            <head>
-              <script src="assets\js\jquery-3.3.1.min.js"></script>
-              <script>
-                $(function () {
-                  $("#age_distribution").load(
-                    "assets\\images\\age_distribution.html"
-                  );
-                });
-              </script>
-            </head>
-          </html>
-          <body>
-            <div id="age_distribution"></div>
-          </body>
-        </div>
-        <p class="mb-4 lead">
-          Now, let's take a deeper dive into speakers' occupations. For the sake of conciseness, 
-          we consider the following three main occupation subgroups:
-        </p>
-        </p>
-          <ul class="mb-4 lead">
-            <li>Politicians</li>
-            <li>Athletes, among which we count Association/American football players, basketball player, ice hockey player, cricketer and all kinds of athletic competitors.</li>
-            <li>Artists, consisting of actors, singers, musicians, painters, etc..</li>
-          </ul>
-          <p class="mb-4 lead">
-          The analysis leads to the following insights:
-          </p>
-          </p>
-          <ol class="mb-4 lead">
-            <li>Male politician speakers are, in average, older than their female counterparts (65.1 vs 61.2 y.o.) . A one sided t-test supports this observation with confidence level of 0.99.</li>
-            <li>As expected, athlete speakers are among the youngest in the dataset. Interestingly, older male athletes also have a voice in the media. 
-              Indeed, former athletes that became famous sports figures are often males due to the important imbalance in sports coverage across genders in the past <a href="https://en.unesco.org/themes/gender-equality-sports-media">link</a>.</li>
-            <li>Finally, the subgroup of artists is no exception to the rule: male speakers are again significantly older.</li>
-          </ol>
-          <p class="mb-4 lead">
-            NB: the density peaks at 21 y.o. for both genders come from imprecise date of birth information provided by Wikidata.
-            <br>
-
-            To sum it up: especially for sport and art-related occupations, a female speaker has much better chanses at being quoted while being young, 
-            while men have an easier time getting quoted even when they become older.  
-          </p>
       </div>
-      <!-- Plots to the right -->
       
+
+      <div class="col-lg-12" data-aos="fade-up">
+        <html>
+          <head>
+            <script src="assets\js\jquery-3.3.1.min.js"></script>
+            <script>
+              $(function () {
+                $("#age_distribution").load(
+                  "assets\\images\\age_distribution.html"
+                );
+              });
+            </script>
+          </head>
+        </html>
+        <body>
+          <div id="age_distribution"></div>
+        </body>
+      </div>
+      <p class="mb-4 lead">
+        Now, let's take a deeper dive into speakers' occupations. For the sake of conciseness, 
+        we consider the following three main occupation subgroups:
+      </p>
+      </p>
+        <ul class="mb-4 lead">
+          <li>Politicians</li>
+          <li>Athletes, among which we count Association/American football players, basketball player, ice hockey player, cricketer and all kinds of athletic competitors.</li>
+          <li>Artists, consisting of actors, singers, musicians, painters, etc..</li>
+        </ul>
+        <p class="mb-4 lead">
+        The analysis leads to the following insights:
+        </p>
+        </p>
+        <ol class="mb-4 lead">
+          <li>Male politician speakers are, in average, older than their female counterparts (65.1 vs 61.2 y.o.) . A one sided t-test supports this observation with confidence level of 0.99.</li>
+          <li>As expected, athlete speakers are among the youngest in the dataset. Interestingly, older male athletes also have a voice in the media. 
+            Indeed, former athletes that became famous sports figures are often males due to the important imbalance in sports coverage across genders in the past <a href="https://en.unesco.org/themes/gender-equality-sports-media">link</a>.</li>
+          <li>Finally, the subgroup of artists is no exception to the rule: male speakers are again significantly older.</li>
+        </ol>
+        <p class="mb-4 lead">
+          NB: the density peaks at 21 y.o. for both genders come from imprecise date of birth information provided by Wikidata.
+          <br>
+
+          To sum it up: especially for sport and art-related occupations, a female speaker has much better chanses at being quoted while being young, 
+          while men have an easier time getting quoted even when they become older.  
+        </p>
+    <!-- Plots to the right -->
+    
     </div>
     <!-- END -->
 
