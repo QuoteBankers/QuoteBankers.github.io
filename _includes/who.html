@@ -8,7 +8,11 @@
         >
           <div class="col-7 text-center mb-5">
             <h2 class="section-title">Who you need to be</h2>
-            <p class="lead">Cricket player,actor, man, women, young, old... So many possibilites, but do everyone of theme has the same chance to be quoted ?  </p>
+            <p class="lead">
+              Cricket player,actor, man, women, young, old... So many
+              possibilites, but do everyone of theme has the same chance to be
+              quoted ?
+            </p>
           </div>
         </div>
 
@@ -21,7 +25,8 @@
           <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a
           >, let us see who are the most quoted speakers:
         </p>
-        <figure>
+
+        <figure data-aos="fade-up">
           <img
             src="assets\images\wordcloud-speakers-blue.png"
             alt="Image"
@@ -124,7 +129,7 @@
     <!-- 3) Occupations for all, for men, and for women (merge Eliott's plots into one)  -->
     <div class="row mb-5 site-section">
       <!-- Plot to the left -->
-      <div class="col-lg-7" data-aos="fade-left">
+      <div class="col-lg-7" data-aos="fade-right">
         <html>
           <head>
             <script src="assets\js\jquery-3.3.1.min.js"></script>
@@ -150,22 +155,17 @@
           break it down by gender we find that politician is actually not the
           most common occupation in any of the genders. We instead find that
           males lean towards sports, while women lean towards creative
-          occupations such as actor, singer and writer.
-          
-          In order to reduce the
+          occupations such as actor, singer and writer. In order to reduce the
           complexity of the data and to more easily compare the occupations we
-          decide on a fixed set of relevant occupation groups: politician, athlete,
-          actor, lawyer, researcher, journalist, musician, and businessperson.
-          We then use the lexical database
+          decide on a fixed set of relevant occupation groups: politician,
+          athlete, actor, lawyer, researcher, journalist, musician, and
+          businessperson. We then use the lexical database
           <a href="https://wordnet.princeton.edu/">wordnet</a>
-          to calculate similarities between each occupation and each occupation group 
-          and the add the occupation group as a new feature in the dataset
-          
-
-          Todo: fix the a's 
-          Todo: Visualise the same plot but for the fixed set 
-          Todo: It would be interesting to visualize the occupation distribution over the number
-          of quotes
+          to calculate similarities between each occupation and each occupation
+          group and the add the occupation group as a new feature in the dataset
+          Todo: fix the a's Todo: Visualise the same plot but for the fixed set
+          Todo: It would be interesting to visualize the occupation distribution
+          over the number of quotes
         </p>
       </div>
     </div>
@@ -183,7 +183,7 @@
         </p>
       </div>
       <!-- Plots to the right -->
-      <div class="col-lg-7" data-aos="fade-right">
+      <div class="col-lg-7" data-aos="fade-left">
         <html>
           <head>
             <script src="assets\js\jquery-3.3.1.min.js"></script>
@@ -210,86 +210,48 @@
         <h2 class="text-black">5 - Clustering</h2>
       </div>
       <p class="mb-4 lead">
-        We wanted to somehow group people together into clusters blabla
-
-        todo: talk about how we did the clustering
-
-        todo: talk about why we did the clustering
-
-        todo: talk about what the clusters contain
+        We wanted to somehow group people together into clusters blabla todo:
+        talk about how we did the clustering todo: talk about why we did the
+        clustering todo: talk about what the clusters contain
       </p>
-
-      <div class="col-lg-12" data-aos="fade-right">
-        <html>
-          <head>
-            <script src="assets\js\jquery-3.3.1.min.js"></script>
-            <script>
-              $(function () {
-                $("#cluster_occupations").load(
-                  "assets\\images\\cluster_occupations.html"
-                );
-              });
-            </script>
-          </head>
-        </html>
-        <body>
-          <div id="cluster_occupations"></div>
-        </body>
-      </div>
-
-      <p class="mb-4 lead">
-        todo: talk about plot 1
-      </p>
-
-      <div class="col-lg-12" data-aos="fade-right">
-        <html>
-          <head>
-            <script src="assets\js\jquery-3.3.1.min.js"></script>
-            <script>
-              $(function () {
-                $("#cluster_ages").load(
-                  "assets\\images\\cluster_ages.html"
-                );
-              });
-            </script>
-          </head>
-        </html>
-        <body>
-          <div id="cluster_ages"></div>
-        </body>
-      </div>
-
-      <p class="mb-4 lead">
-        todo: talk about plot 
-      </p>
-
-      <!-- Block of text to the right -->
-      <!--
-      <div class="col-lg-12 pl-lg-5 ml-auto mt-md-5">
-        <div class="author-box" data-aos="fade-left">
-          <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img
-                src="/assets/images/person_4.jpg"
-                alt="Image"
-                class="img-fluid rounded-circle"
-              />
-            </div>
-            <div class="mr-auto text-black">
-              <strong class="font-weight-bold mb-0">Grey Simpson</strong> <br />
-              Co-Founder, XYZ Inc.
-            </div>
-          </div>
-          <blockquote>
-            &ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Ducimus vitae ipsa asperiores inventore aperiam iure?&rdquo;
-          </blockquote>
-        </div>
-      </div>
-    
-    -->
-    <!-- END -->
     </div>
+
+    <div class="col-lg-12" data-aos="fade-up">
+      <html>
+        <head>
+          <script src="assets\js\jquery-3.3.1.min.js"></script>
+          <script>
+            $(function () {
+              $("#cluster_occupations").load(
+                "assets\\images\\cluster_occupations.html"
+              );
+            });
+          </script>
+        </head>
+      </html>
+      <body>
+        <div id="cluster_occupations"></div>
+      </body>
+    </div>
+
+    <p class="mb-4 lead">todo: talk about plot 1</p>
+    <div class="col-lg-12" data-aos="fade-up">
+      <html>
+        <head>
+          <script src="assets\js\jquery-3.3.1.min.js"></script>
+          <script>
+            $(function () {
+              $("#cluster_ages").load("assets\\images\\cluster_ages.html");
+            });
+          </script>
+        </head>
+      </html>
+      <body>
+        <div id="cluster_ages"></div>
+      </body>
+    </div>
+
+    <p class="mb-4 lead">todo: talk about plot</p>
     <!-- The summary part of the 3 clusters -->
     <div class="row align-items-stretch">
       <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
