@@ -8,9 +8,7 @@
         >
           <div class="col-7 text-center mb-5">
             <h2 class="section-title">Who you need to be</h2>
-            <p class="lead">
-              Todo: undertitle
-            </p>
+            <p class="lead">Todo: undertitle</p>
           </div>
         </div>
 
@@ -48,39 +46,12 @@
 
     <!-- 1) Persons (x-azis) vs n_quotes (y-axis) -->
     <div class="row mb-5 site-section">
-      <!-- Block of text to the left -->
-      <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
+      <div class="text-center mb-5">
         <h2 class="text-black">1. Imbalance in number of quotations</h2>
-        <p class="mb-4">
-          As seen from the graph (log-scaled in the y-axis),
-          <b>most quotes are made by a few people</b>, and
-          <b>most people have made a few quotes</b>. In this dataset,
-          <b>20% of the most quoted speakers have made 89% of the quotes</b>!
-          The distribution of the number of quotes per speaker is a power law,
-          and interestingly also follows the
-          <a href="https://en.wikipedia.org/wiki/Pareto_principle">80/20 rule</a
-          >, also known as the Pareto principle.
-          <br />
-          The Pareto principle was observed by the Italian economist Vilfredo
-          Pareto, whom while at the University of Lausanne (!), showed that 80%
-          of the land in Italy was owned by 20% of the population. This
-          distribution has further been seen in other areas such as 80% of
-          wealth is owned by 20% of the population. 80% of all end users
-          generally use only 20% of a software application's features, and 80%
-          of health care resources are spent on 20 % of the patients. Now we
-          find that 88% of quotes are made by 20% of quoted speakers. The Pareto
-          Principle is often seen as a guide for how to allocate resources
-          efficiently. Here, it gives us a window into which pursue our
-          analysis.
-          <br />After all, to answer the question
-          <em>who has a voice in the media?</em>, we might as well focus on
-          people dominating the dataset. Right? Todo: talk about why we only
-          consider speakers with over 5 quotes
-        </p>
       </div>
 
       <!-- Plots to the right -->
-      <div class="col-lg-7" data-aos="fade-left">
+      <div class="col-lg-12" data-aos="fade-up">
         <html>
           <head>
             <script src="assets\js\jquery-3.3.1.min.js"></script>
@@ -93,11 +64,35 @@
             </script>
           </head>
         </html>
-        <!-- <img src="/assets/images/undraw_gift_card_6ekc.svg" alt="Image" class="img-fluid"> -->
         <body>
           <div id="quotations_per_speaker"></div>
         </body>
       </div>
+      <p class="mb-4 lead wordcloud-speakers-image-container">
+        As seen from the graph (log-scaled in the y-axis),
+        <b>most quotes are made by a few people</b>, and
+        <b>most people have made a few quotes</b>. In this dataset,
+        <b>20% of the most quoted speakers have made 89% of the quotes</b>! The
+        distribution of the number of quotes per speaker is a power law, and
+        interestingly also follows the
+        <a href="https://en.wikipedia.org/wiki/Pareto_principle">80/20 rule</a>,
+        also known as the Pareto principle.
+        <br />
+        The Pareto principle was observed by the Italian economist Vilfredo
+        Pareto, whom while at the University of Lausanne (!), showed that 80% of
+        the land in Italy was owned by 20% of the population. This distribution
+        has further been seen in other areas such as 80% of wealth is owned by
+        20% of the population. 80% of all end users generally use only 20% of a
+        software application's features, and 80% of health care resources are
+        spent on 20 % of the patients. Now we find that 89% of quotes are made
+        by 20% of quoted speakers.
+        <br />
+        &emsp;To answer the question <em>who has a voice in the media?</em>, we
+        want to focus on people that are quoted regularly. A person that has
+        only been quoted once does not really have "a voice in the media", and
+        therefore going forward in our analysis, we will only consider speakers
+        that have made more than 5 quotes.
+      </p>
     </div>
     <!-- END -->
 
@@ -107,11 +102,11 @@
       <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
         <h2 class="text-black">2. Male-dominated quotations</h2>
         <p class="mb-4">
-          In the pre-processed part of the dataset used to run the rest of our
-          analysis, males stand for ~77% of all quotations, females for ~22% and
-          other genders for a little over 1%. Even though the data presented has
-          been aggregated over the years 2015-2020, we have not observed
-          significant changes in the distribution of genders over these years.
+          When we break down the speakers by gender, we can see that males stand
+          for ~77% of all quotations, females for ~22% and other genders for a
+          little over 1%. Even though the data presented has been combined over
+          the years 2015-2020, we have not observed significant changes in the
+          distribution of genders over these years.
         </p>
       </div>
       <!-- Plots to the right -->
@@ -128,16 +123,7 @@
 
     <!-- 3) Occupations for all, for men, and for women (merge Eliott's plots into one)  -->
     <div class="row mb-5 site-section">
-      <!-- Block of text to the left -->
-      <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
-        <h2 class="text-black">3. Occupation distribution for genders</h2>
-        <p class="mb-4">
-          In the plot to the right we can see the distribution of occupations
-          for the speakers.
-        </p>
-      </div>
-
-      <!-- Plots to the right -->
+      <!-- Plot to the left -->
       <div class="col-lg-7" data-aos="fade-left">
         <html>
           <head>
@@ -155,12 +141,48 @@
           <div id="top10_occupations_males_and_females"></div>
         </body>
       </div>
+      <!-- Text to the right -->
+      <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
+        <h2 class="text-black">3. Occupation distribution</h2>
+        <p class="mb-4">
+          Here we break down the speakers by gender and occupation. We can see
+          that the overall most common occupation is politician, but when we
+          break it down by gender we find that politician is actually not the
+          most common occupation in any of the genders. We instead find that
+          males lean towards sports, while women lean towards creative
+          occupations such as actor, singer and writer.
+          
+          In order to reduce the
+          complexity of the data and to more easily compare the occupations we
+          decide on a fixed set of relevant occupation groups: politician, athlete,
+          actor, lawyer, researcher, journalist, musician, and businessperson.
+          We then use the lexical database
+          <a href="https://wordnet.princeton.edu/">wordnet</a>
+          to calculate similarities between each occupation and each occupation group 
+          and the add the occupation group as a new feature in the dataset
+          
+
+          Todo: fix the a's 
+          Todo: Visualise the same plot but for the fixed set 
+          Todo: It would be interesting to visualize the occupation distribution over the number
+          of quotes
+        </p>
+      </div>
     </div>
     <!-- END -->
 
     <!-- 4) Age & occupation -->
     <div class="row mb-5 site-section">
-      <!-- Plots to the left -->
+      <!-- Block of text to the left -->
+      <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
+        <h2 class="text-black">4 - Age and occupation group</h2>
+        <p class="mb-4">
+          To the left we can see the age distribution for the top three
+          occupations: Politicians, Athletes, and artists bla bla bla talk about
+          the distributions... bla bla bla talk why there are peaks at 21....
+        </p>
+      </div>
+      <!-- Plots to the right -->
       <div class="col-lg-7" data-aos="fade-right">
         <html>
           <head>
@@ -178,16 +200,6 @@
           <div id="age_distribution"></div>
         </body>
       </div>
-
-      <!-- Block of text to the right -->
-      <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
-        <h2 class="text-black">4 - Age and occupation</h2>
-        <p class="mb-4">
-          To the left we can see the age distribution for the top three
-          occupations: Politicians, Athletes, and artists bla bla bla talk about
-          the distributions... bla bla bla talk why there are peaks at 21....
-        </p>
-      </div>
     </div>
     <!-- END -->
 
@@ -195,18 +207,34 @@
     <div class="row mb-5 site-section">
       <!-- Plots to the left -->
       <div class="col-lg-7" data-aos="fade-right">
-        <img
-          src="/assets/images/undraw_gift_card_6ekc.svg"
-          alt="Image"
-          class="img-fluid"
-        />
+        <html>
+          <head>
+            <script src="assets\js\jquery-3.3.1.min.js"></script>
+            <script>
+              $(function () {
+                $("#cluster_occupations").load(
+                  "assets\\images\\cluster_occupations.html"
+                );
+              });
+            </script>
+          </head>
+        </html>
+        <body>
+          <div id="cluster_occupations"></div>
+        </body>
       </div>
 
       <!-- Block of text to the right -->
       <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
         <h2 class="text-black">5 - Clustering</h2>
         <p class="mb-4">
-          As seen to the left, few people are quoted many times.
+          We wanted to somehow group people together into clusters blabla
+
+          todo: talk about how we did the clustering
+
+          todo: talk about why we did the clustering
+
+          todo: talk about what the clusters contain
         </p>
 
         <div class="author-box" data-aos="fade-left">
