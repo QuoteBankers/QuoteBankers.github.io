@@ -17,20 +17,20 @@
                 </li>
                 The Quotebank dataset contains 178 million speaker-attributed attributed quotations collected
                 from 162 million English news articles published between 2008 and 2020. The dataset is divided
-                into phases A-E; in this project only the phase E part (2015-2020) of the quotation-centric dataset is used,
+                into phases A-E; in this project, only the phase E part (2015-2020) of the quotation-centric dataset is used,
                 as only phase E has correctly represented non-ASCII characters. For more details regarding the 
                 phases see the datasets <a href="https://github.com/epfl-dlab/Quotebank/blob/main/phases.md">GitHub repository</a>.
                 <li>
                     <a id="wikidata" href="https://drive.google.com/drive/folders/1VAFHacZFh0oxSxilgNByb1nlNsqznUf0">Wikidata speakers</a>
                 </li>
-                This file contains the metadata about 9 million speakers in the Quotebank dataset. The attributes provided (and the
-                amount of speakers they are available for) are: 
+                This file contains the metadata of about 9 million speakers in the Quotebank dataset. The attributes provided (and the
+                number of speakers they are available for) are 
                 date of birth (<b>?</b>), gender (98%), occupation (96%) nationality (84%), religion (11%), ethnic group (7%), etc. 
                 <li>
                     <a id="wordnet" href="https://wordnet.princeton.edu/">Wordnet</a>
                 </li>
                 Wordnet is a lexical database of the English language organized in a tree-manner. We used it to calculate the semantic 
-                distances between all the occupations in the Wikidata-dataset to a set of top 8 occupations, in order to avoid the curse 
+                distances between all the occupations in the Wikidata-dataset to a set of top 8 occupations, to avoid the curse 
                 of dimensionality when clustering with K-means.
             </ul> 
           <h3>Methods</h3>
@@ -38,7 +38,7 @@
                 <li>
                     <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html">K-means clustering algorithm</a>
                 </li>
-                The speakers dataset that we want to cluster to find personas in the data has only numerical features. Thus, we chose to cluster
+                The speakers' dataset that we want to cluster to find personas in the data has only numerical features. Thus, we chose to cluster
                 the data using the K-means clustering algorithm implemented in sklearn. To avoid the curse of dimensionality when clustering, 
                 we reduced the genders to only [male, female, others] before one-hot encoding, and also, we reduced the roughly 2400 different 
                 occupations to the semantic differences to a set of pre-defined 8 occupations. For implementation details, see
@@ -51,7 +51,7 @@
                 input the features of an arbitrary person, what the person talks about, and how the person talks about it. 
                 The tool then gives an estimation of how likely this person is to get quoted. The tool is based on a neural 
                 network that is trained on features of speakers in the quotebank dataset, with the label being how many times the speaker was quoted. 
-                For the implemention details, see the Jupyter notebook 
+                For the implementation details, see the Jupyter notebook 
                  <a href="https://github.com/epfl-ada/ada-2021-project-quotebankers/blob/main/n_quotes_prediction.ipynb">n_quotes_prediction.ipynb</a>
                  in the GitHub repository.
                 <li>
@@ -60,7 +60,7 @@
                 The used emotion classification method is the zero-shot classification using the <a href="https://huggingface.co/">Hugging-Face framework</a> that is also used in
                  the topic classification part of the project. This method is easily scalable as 100,000 quotes were classified in less than 
                  10 minutes, and seem to yield acceptable results. The emotion categories chosen were angry, joy, sad, fear, calm and neutral,
-                 according to the Russel model of emotion <sup><a href="#ref:3">3</a></sup>. For the implemention details, see the Jupyter notebook 
+                 according to the Russel model of emotion <sup><a href="#ref:3">3</a></sup>. For the implementation details, see the Jupyter notebook 
                  <a href="https://github.com/epfl-ada/ada-2021-project-quotebankers/blob/main/find_emotions.ipynb">find_emotions.ipynb</a>
                  in the GitHub repository.
                 <li>
