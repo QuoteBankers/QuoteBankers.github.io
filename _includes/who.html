@@ -8,7 +8,7 @@
         >
           <div class="col-7 text-center mb-5">
             <h2 class="section-title">Who you need to be</h2>
-            <p class="lead">Cricket player, actor, man, women, young, old... So many possibilites, but do everyone have the same chance to be quoted?  </p>
+            <p class="lead">Cricket player, actor, man, women, young, old... So many possibilities, but does everyone have the same chance to be quoted?  </p>
           </div>
         </div>
 
@@ -16,9 +16,9 @@
           <b>Isn't it a pleasure to be listened to?</b> The ability to make your
           voice heard is a privilege that few have. Sometimes you can have
           the feeling that only the loudest are listened to. We have analyzed
-          the <a href="#quotebank">Quotebank</a> dataset from 2015 to 2020, and from it we
+          the <a href="#quotebank">Quotebank</a> dataset from 2015 to 2020, and from it, we
           extracted information about the speakers from <a href="#wikidata">Wikidata</a>. First, 
-          let us see who are the most quoted speakers !
+          let us see who are the most quoted speakers!
         </p>
 
         <figure data-aos="fade-up">
@@ -35,10 +35,10 @@
           </figcaption>
         </figure>
         <p class="mb-4 lead">
-          From this picture we can see that we have a wide mixture of speakers.
-          Unsurprisingly, the biggest names in the picture and the most quoted
+          From this picture, we can see that we have a wide mixture of speakers.
+          Unsurprisingly, the biggest names in the picture, and the most quoted
           speakers are American politicians and other world leaders, but we can
-          also see a lot of sports personalities, bussiness leaders, artists and
+          also see a lot of sports personalities, business leaders, artists and
           influencers. Let us now take a deeper dive into the data...
         </p>
       </div>
@@ -79,13 +79,13 @@
         also known as the Pareto principle.
         <br />
         The Pareto principle was observed by the Italian economist Vilfredo
-        Pareto, whom while at the University of Lausanne (!), showed that 80% of
+        Pareto, who while at the University of Lausanne (!), showed that 80% of
         the land in Italy was owned by 20% of the population. This distribution
         has further been seen in other areas such as ~80% of wealth is owned by
         20% of the population, ~80% of all end users generally use only 20% of a
         software application's features, and ~80% of health care resources are
         spent on 20 % of the patients. Now we find that 89% of quotes are made
-        by 20% of quoted speakers. Note however that the pareto principle is not 
+        by 20% of quoted speakers. Note however that the Pareto principle is not 
         a law like most other principles, but merely an observation of a phenomenon.
         <br />
         &emsp;To answer the question <em>who has a voice in the media?</em>, we
@@ -105,8 +105,8 @@
         <h2 class="text-black">2. Male-dominated quotations</h2>
         <p class="mb-4">
           When we break down the speakers by gender, we can see that males stand
-          for ~77% of all quotations, females for ~22% and other genders for a
-          little over 1%. Even though the data presented has been combined over
+          for ~77% of all quotations, females for ~22%, and other genders for a
+          little over 1%. Even though the data presented have been combined over
           the years 2015-2020, we have not observed significant changes in the
           distribution of genders over these years.
         </p>
@@ -152,13 +152,13 @@
           break it down by gender we find that politician is actually not the
           most common occupation in any of the genders. We instead find that
           males lean towards sports, while women lean towards creative
-          occupations such as actor, singer and writer. In order to reduce the
-          complexity of the data and to more easily compare the occupations we
+          occupations such as actor, singer, and writer. To reduce the
+          complexity of the data and to more easily compare the occupations, we
           decide on a fixed set of relevant occupation groups: politician,
           athlete, actor, lawyer, researcher, journalist, musician, and
           businessperson. We then use the lexical database <a href="#wordnet">Wordnet</a>
           to calculate similarities between each occupation and each occupation
-          group and the add the occupation group as a new feature in the dataset.
+          group and add the occupation group as a new feature in the dataset.
         </p>
       </div>
     </div>
@@ -195,15 +195,15 @@
       </p>
         <ul class="mb-4 lead">
           <li>Politicians</li>
-          <li>Athletes, among which we count Association/American football players, basketball player, ice hockey player, cricketer and all kinds of athletic competitors.</li>
-          <li>Artists, consisting of actors, singers, musicians, painters, etc..</li>
+          <li>Athletes, among which we count Association/American football players, basketball players, ice hockey players, cricketers, and all kinds of athletic competitors.</li>
+          <li>Artists, consisting of actors, singers, musicians, painters, etc.</li>
         </ul>
         <p class="mb-4 lead">
         The analysis leads to the following insights:
         </p>
         </p>
         <ol class="mb-4 lead">
-          <li>Male politician speakers are, in average, older than their female counterparts (65.1 vs 61.2 y.o.) . A one sided t-test supports this observation with confidence level of 0.99.</li>
+          <li>Male politician speakers are, on average, older than their female counterparts (65.1 vs 61.2). A one-sided t-test supports this observation with a confidence level of 0.99.</li>
           <li>As expected, athlete speakers are among the youngest in the dataset. Interestingly, older male athletes also have a voice in the media. 
             Indeed, former athletes that became famous sports figures are often males due to the important imbalance in sports coverage across genders in the past <a href="https://en.unesco.org/themes/gender-equality-sports-media">link</a>.</li>
           <li>Finally, the subgroup of artists is no exception to the rule: male speakers are again significantly older.</li>
@@ -212,7 +212,7 @@
           NB: the density peaks at 21 y.o. for both genders come from imprecise date of birth information provided by Wikidata.
           <br>
 
-          To sum it up: especially for sport and art-related occupations, a female speaker has much better chanses at being quoted while being young, 
+          To sum it up: especially for sport and art-related occupations, a female speaker has much better chances of being quoted while being young, 
           while men have an easier time getting quoted even when they become older.  
         </p>
     <!-- Plots to the right -->
@@ -229,7 +229,7 @@
       <p class="mb-4 lead">
           As we have seen in the plots before, the different variables can be combined in many ways if we want 
           to understand the data. On the other hand, manually finding the relevant combination of features is 
-          complex to find, thus we wanted rather to do this in an unsupervised manner to let the data talk by itself!
+          complex to find, thus we wanted rather do this in an unsupervised manner to let the data talk by itself!
           <br>
           With that in mind, we performed clustering with K-means with the following variables: gender, age, number of quotes,
           and occupation. With the elbow method, we decided that 3 was the best amount of clusters to divide the speakers in. 
@@ -287,7 +287,7 @@
             <div>
               <h3>Cluster A</h3>
               <p>
-                Cluster A is primarily composed of <b>politicians</b>, even though huge proportion of it is made of<b> art-related jobs</b>, such as actor or singer. Counting more quotes than the other two clusters combined, it is also the <b>oldest</b> cluster with over 50% of it being over 60 years old. Indeed, known politicians are usually on the older side of the force...
+                Cluster A is primarily composed of <b>politicians</b>, even though a huge proportion of it is made of<b> art-related jobs</b>, such as actor or singer. Counting more quotes than the other two clusters combined, it is also the <b>oldest</b> cluster with over 50% of it being over 60 years old. Indeed, known politicians are usually on the older side of the force...
               </p>
             </div>
           </div>
@@ -306,7 +306,7 @@
             <div>
               <h3>Cluster B</h3>
               <p>
-                Cluster B is composed similarly to cluster A, except that the most found occupation is <b>actor</b> instead of politician. It has <b>less than half</b> the numbers of quotes of cluster A, which may be explained by the fact this cluster is much more <b>balanced</b> in term of age. 
+                Cluster B is composed similarly to cluster A, except that the most found occupation is <b>actor</b> instead of politician. It has <b>less than half</b> the number of quotes of cluster A, which may be explained by the fact this cluster is much more <b>balanced</b> in terms of age. 
               </p>
             </div>
           </div>
@@ -325,7 +325,7 @@
             <div>
               <h3>Cluster C</h3>
               <p>
-                Cluster C could be renamed 50 shades of <b>sports</b>. Indeed, the majority of the cluster is composed by sport-related occupations, unlike the first two clusters. Also, it is the <b>youngest</b> group, which is in accordance with occupations in it. Indeed, athletes tend to be younger than politicians.
+                Cluster C could be renamed 50 shades of <b>sports</b>. Indeed, the majority of the cluster is composed of sport-related occupations, unlike the first two clusters. Also, it is the <b>youngest</b> group, which is in accordance with occupations in it. Indeed, athletes tend to be younger than politicians.
               </p>
             </div>
           </div>
