@@ -16,10 +16,9 @@
           <b>Isn't it a pleasure to be listened to?</b> The ability to make your
           voice heard is a privilege that few have. Sometimes you can have
           the feeling that only the loudest are listened to. We have analyzed
-          the Quotebank dataset from 2015 to 2020, and from the Quotebank dataset we
-          extracted information about the speakers from
-          <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a
-          >, let us see who are the most quoted speakers:
+          the <a href="#quotebank">Quotebank</a> dataset from 2015 to 2020, and from it we
+          extracted information about the speakers from <a href="#wikidata">Wikidata</a>, 
+          let us see who are the most quoted speakers:
         </p>
 
         <figure data-aos="fade-up">
@@ -156,13 +155,9 @@
           complexity of the data and to more easily compare the occupations we
           decide on a fixed set of relevant occupation groups: politician,
           athlete, actor, lawyer, researcher, journalist, musician, and
-          businessperson. We then use the lexical database
-          <a href="https://wordnet.princeton.edu/">wordnet</a>
+          businessperson. We then use the lexical database <a href="#wordnet">Wordnet</a>
           to calculate similarities between each occupation and each occupation
-          group and the add the occupation group as a new feature in the dataset
-          Todo: fix the a's Todo: Visualise the same plot but for the fixed set
-          Todo: It would be interesting to visualize the occupation distribution
-          over the number of quotes
+          group and the add the occupation group as a new feature in the dataset.
         </p>
       </div>
     </div>
@@ -171,86 +166,112 @@
     <!-- 4) Age & occupation -->
     <div class="row mb-5 site-section">
       <!-- Block of text to the left -->
-      <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
-        <h2 class="text-black">4 - Age and occupation group</h2>
-        <p class="mb-4">
-          To the left we can see the age distribution for the top three
-          occupations: Politicians, Athletes, and artists bla bla bla talk about
-          the distributions... bla bla bla talk why there are peaks at 21....
+      <div class="col-lg-12 pl-lg-5 ml-auto mt-md-5">
+        <h2 class="text-black">4. Age and occupation group</h2>
+
+        <div class="col-lg-12" data-aos="fade-up">
+          <html>
+            <head>
+              <script src="assets\js\jquery-3.3.1.min.js"></script>
+              <script>
+                $(function () {
+                  $("#age_distribution").load(
+                    "assets\\images\\age_distribution.html"
+                  );
+                });
+              </script>
+            </head>
+          </html>
+          <body>
+            <div id="age_distribution"></div>
+          </body>
+        </div>
+        <p class="mb-4 lead">
+          Now, let's take a deeper dive into speakers' occupations. For the sake of conciseness, 
+          we consider the following three main occupation subgroups:
         </p>
+        </p>
+          <ul class="mb-4 lead">
+            <li>Politicians</li>
+            <li>Athletes, among which we count Association/American football players, basketball player, ice hockey player, cricketer and all kinds of athletic competitors.</li>
+            <li>Artists, consisting of actors, singers, musicians, painters, etc..</li>
+          </ul>
+          <p class="mb-4 lead">
+          The analysis leads to the following insights:
+          </p>
+          </p>
+          <ol class="mb-4 lead">
+            <li>Male politician speakers are, in average, older than their female counterparts (65.1 vs 61.2 y.o.) . A one sided t-test supports this observation with confidence level of 0.99.</li>
+            <li>As expected, athlete speakers are among the youngest in the dataset. Interestingly, older male athletes also have a voice in the media. 
+              Indeed, former athletes that became famous sports figures are often males due to the important imbalance in sports coverage across genders in the past <a href="https://en.unesco.org/themes/gender-equality-sports-media">link</a>.</li>
+            <li>Finally, the subgroup of artists is no exception to the rule: male speakers are again significantly older.</li>
+          </ol>
+          <p class="mb-4 lead">
+            NB: the density peaks at 21 y.o. for both genders come from imprecise date of birth information provided by Wikidata.
+            <br>
+
+            To sum it up: especially for sport and art-related occupations, a female speaker has much better chanses at being quoted while being young, 
+            while men have an easier time getting quoted even when they become older.  
+          </p>
       </div>
       <!-- Plots to the right -->
-      <div class="col-lg-7" data-aos="fade-left">
-        <html>
-          <head>
-            <script src="assets\js\jquery-3.3.1.min.js"></script>
-            <script>
-              $(function () {
-                $("#age_distribution").load(
-                  "assets\\images\\age_distribution.html"
-                );
-              });
-            </script>
-          </head>
-        </html>
-        <body>
-          <div id="age_distribution"></div>
-        </body>
-      </div>
+      
     </div>
     <!-- END -->
 
     <!-- 5) Clustering -->
-    <div class="row mb-5 site-section">
+    <div class="row mb-3 site-section">
       <!-- Plots to the left -->
-      <div class="text-center mb-5">
-        <h2 class="text-black">5 - Clustering</h2>
+      <div class="text-center mb-3">
+        <h2 class="text-black">5. Clustering</h2>
       </div>
       <p class="mb-4 lead">
-        We wanted to somehow group people together into clusters blabla todo:
-        talk about how we did the clustering todo: talk about why we did the
-        clustering todo: talk about what the clusters contain
+          As we have seen in the plots before, the different variables can be combined in many ways if we want 
+          to understand the data. On the other hand, manually finding the relevant combination of features is 
+          complex to find, thus we wanted rather to do this in an unsupervised manner to let the data talk by itself!
+          <br>
+          With that in mind, we performed clustering with K-means with the following variables: gender, age, number of quotes,
+          and occupation. With the elbow method, we decided that 3 was the best amount of clusters to divide the speakers in. 
+          Let us see the distributions of the <b>occupations and ages</b> of the found clusters!
       </p>
     </div>
 
-    <div class="col-lg-12" data-aos="fade-up">
-      <html>
-        <head>
-          <script src="asrsets\js\jquery-3.3.1.min.js"></script>
-          <script>
-            $(function () {
-              $("#cluster_occupations").load(
-                "assets\\images\\cluster_occupations.html"
-              );
-            });
-          </script>
-        </head>
-      </html>
-      <body>
-        <div id="cluster_occupations"></div>
-      </body>
-    </div>
+    <div class="row mb-3 site-section">
 
-    <p class="mb-4 lead">todo: talk about plot 1</p>
-    <div class="col-lg-12" data-aos="fade-up">
-      <html>
-        <head>
-          <script src="assets\js\jquery-3.3.1.min.js"></script>
-          <script>
-            $(function () {
-              $("#cluster_ages").load("assets\\images\\cluster_ages.html");
-            });
-          </script>
-        </head>
-      </html>
-      <body>
-        <div id="cluster_ages"></div>
-      </body>
-    </div>
-    
-    <div class="row mb-5 site-section">
-      <p class="mb-4 lead">todo: talk about plot</p>
-    </div>
+        <div class="col-lg-6" data-aos="">
+        <html>
+            <head>
+            <script src="asrsets\js\jquery-3.3.1.min.js"></script>
+            <script>
+                $(function () {
+                $("#cluster_occupations").load(
+                    "assets\\images\\cluster_occupations.html"
+                );
+                });
+            </script>
+            </head>
+        </html>
+        <body>
+            <div id="cluster_occupations"></div>
+        </body>
+        </div>
+
+        <div class="col-lg-6" data-aos="">
+        <html>
+            <head>
+            <script src="assets\js\jquery-3.3.1.min.js"></script>
+            <script>
+                $(function () {
+                $("#cluster_ages").load("assets\\images\\cluster_ages.html");
+                });
+            </script>
+            </head>
+        </html>
+        <body>
+            <div id="cluster_ages"></div>
+        </body>
+        </div>
+    </div>  
 
     <div class="row mb-5 site-section">
     <!-- The summary part of the 3 clusters -->
